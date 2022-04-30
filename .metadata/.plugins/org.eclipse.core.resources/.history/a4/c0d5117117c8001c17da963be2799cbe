@@ -1,0 +1,55 @@
+
+//Implement a method to perform basic string compression using the counts of repeated characters. For example, the string aabcccccaaa would become a2blc5a3. If the "compressed" string would not become smaller than the original string, your method should return the original string. You can assume the string has only uppercase and lowercase letters (a - z)
+
+public class StringCompressor {
+
+	static String compress(String s) {
+
+		int count = 0;
+		String newS = "";
+		int prev = 0;
+		for (int i = 1; i < s.length(); i++) {
+//			System.out.print(s.charAt(i));
+
+			if (s.charAt(i) == s.charAt(i + 1)) {
+//				System.out.print(s.charAt(i));
+
+//				count++;
+			}
+			if (i == 0) {
+//				System.out.println(s.charAt(i));
+			} else if (s.charAt(i) != s.charAt(i + 1)) {
+				System.out.println("i:" + i);
+				System.out.println(s.charAt(i));
+				count = i  - prev;
+				prev = i ;
+				System.out.println("count:" + count);
+//				System.out.println(count);
+			}
+			if(i==s.length()-2) {
+				System.out.println(s.charAt(s.length()-1));
+
+				count = i  - prev;
+				System.out.println("count:" + count);
+			}
+//			System.out.print(s.charAt(i+1));
+
+//			else {
+//				newS.concat((s.charAt(i)));
+//				newS.concat(Integer.toString(count));
+//				System.out.print(s.charAt(i));
+//				System.out.print(count);
+//			count = 1;
+//			}
+//			System.out.print(s.charAt(i) );
+//			System.out.print(count);
+		}
+		return newS;
+	}
+
+	public static void main(String[] args) {
+		String s = "aabcccccaaa";
+
+		compress(s);
+	}
+}

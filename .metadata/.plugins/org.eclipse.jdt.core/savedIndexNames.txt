@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+C:\revature\projects\dailychallenge\OB\StringCompressor\.metadata\.plugins\org.eclipse.jdt.core
+217047792.index
+1946173612.index
+1865797976.index

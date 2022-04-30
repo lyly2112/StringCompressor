@@ -1,0 +1,41 @@
+
+//Implement a method to perform basic string compression using the counts of repeated characters. For example, the string aabcccccaaa would become a2blc5a3. If the "compressed" string would not become smaller than the original string, your method should return the original string. You can assume the string has only uppercase and lowercase letters (a - z)
+
+public class StringCompressor {
+
+	static String compress(String s) {
+
+		int count = 0;
+		String newS="";
+		for (int i = 0; i < s.length() - 1; i++) {
+			count++;
+
+			if (s.charAt(i) != s.charAt(i + 1)) {
+//				System.out.print(s.charAt(i));
+//				System.out.print(count);
+				System.out.println(s.charAt(i));
+				newS.concat(Character.toString(s.charAt(i)));
+				newS.concat(Integer.toString(s.charAt(i)));
+				count = 0;
+			}
+		}
+
+		newS.concat(Character.toString(s.charAt(s.length() - 1)));
+		newS.concat(Integer.toString(s.charAt(count + 1)));
+
+//		System.out.print(s.charAt(s.length()-1) );
+//		System.out.print( count+1);
+		System.out.println("test");
+		newS.concat("PPP");
+		newS=newS+"OOO";
+		System.out.println(newS);
+		return newS;
+	}
+
+	public static void main(String[] args) {
+		String s = "aabcccccaaa";
+
+		System.out.println(compress(s));
+
+	}
+}
